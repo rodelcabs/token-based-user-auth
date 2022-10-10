@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "createdAt": "2022-07-10T01:55:49.288Z",
+      "name": {
+        "firstName": "Violette",
+        "lastName": "Dicki"
+      },
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/664.jpg",
+      "email": "Audreanne_McCullough@gmail.com",
+      "password": "dDsvO1ss9NBk6Wp",
+      "userImage": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/965.jpg",
+      "id": "1"
+    },
+    {
+      "name": {
+        "firstName": "John",
+        "lastName": "Doe"
+      },
+      "email": "john@gmail.com",
+      "password": "$2b$10$7oKBLyI1ZQIg9IdEU/pn.ev8l8Sf3GbJLPpzvzSWoQ2YbCOv9pgWG",
+      "avatar": "https://icon-library.com/images/default-profile-icon/default-profile-icon-5.jpg",
+      "createdAt": "2022-07-19T15:44:42.492Z",
+      "id": "yDTArAU"
+    }
+  ]
+}
+
