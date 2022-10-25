@@ -8,8 +8,10 @@ const SETTINGS = {
     NOCONTENT: 204,
     BADREQ: 400,
     NOTFOUND: 404,
+    UNAUTHORIZED: 401,
     SERVERERROR: 500
-  }
+  },
+  SALTROUNDS: 10
 }
 
 module.exports = SETTINGS;

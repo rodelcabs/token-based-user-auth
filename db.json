@@ -22,7 +22,15 @@
       "avatar": "https://icon-library.com/images/default-profile-icon/default-profile-icon-5.jpg",
       "createdAt": "2022-07-19T15:44:42.492Z",
       "id": "yDTArAU"
+    },
+    {
+      "name": {
+        "firstName": "JCD",
+        "lastName": "ASDAS"
+      },
+      "email": "jcd@gmail.com",
+      "password": "$2b$10$x296Ozcq7N9ZD5mtH0Yj/OFdUjHs8qqVbd0SGVZhXtBdGMjwu8Wmy",
+      "id": "zYjEA6o"
     }
   ]
 }
-

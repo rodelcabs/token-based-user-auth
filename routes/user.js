@@ -2,12 +2,13 @@ const express = require("express");
 const SETTINGS = require("../SETTINGS.js");
 const USERCONTROLLER = require("../controllers/userController");
 const router = express.Router();
+const authMiddleware = require("../middlewares/authMiddleware");
 
-// get the current logged in user
-router.get("/:userId", USERCONTROLLER.getUser);
+router.post("/", USERCONTROLLER.createUser);
 
-router.post("/accessToken", async(req, res) =>{
-  res.json("access token")
-})
+// get the current logged in user 
+router.get("/", authMiddleware.verifyAuth, USERCONTROLLER.getUser);
+
+router.post("/accessToken", USERCONTROLLER.accessToken)
 
 module.exports = router;

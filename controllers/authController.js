@@ -6,22 +6,36 @@ const UserModel = require("../models/User");
 const User = new UserModel();
 
 const AUTHCONTROLLER = {
-  getToken: asyncHandler(async function(req,res){
+  authUser: asyncHandler(async function(credentials){
     try {
-      const credentials = req.body.credentials;
-      if(!credentials){
-        res.status("400");
-        throw new Error("User not authenticated. Credentials are required!");
-      }
-      
-      let user = User.findOne({email: credentials.email});
+      let user = await User.findOne({email: credentials.email});
       if(user){
+        let pwdMatch = await bcrypt.compare(credentials.password, user.password);
+        if(pwdMatch){
+          return user;
+        }
 
+        throw new Error("User not authenticated. Password didn't match.");
       } 
+
+      throw new Error("User not authenticated. User doesn't exist.");
     } catch (error) {
       throw new Error(error.message? error.message: error);
     }
-  })
+  }),
+  generateAccessToken: function(user){
+    try {
+      const payload = {
+        id: user.id,
+        pwd: user.password
+      };
+
+      const token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: process.env.TOKEN_EXP});
+      return token;
+    } catch (error) { 
+      throw new Error(error.message? error.message: error);
+    }
+  }
 }
 
 module.exports = AUTHCONTROLLER;

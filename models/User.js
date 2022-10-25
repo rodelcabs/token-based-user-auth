@@ -40,6 +40,15 @@ class User {
       throw new Error(error.message? error.message: error);
     }
   }
+
+  async create(user){
+    try {
+      const createUserResponse = await axios.post(SETTINGS.USERSURL, user);
+      return createUserResponse.data;
+    } catch (error) {
+      throw new Error(error.message? error.message: error);
+    }
+  }
 }
 
 module.exports = User;
